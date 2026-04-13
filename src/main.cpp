@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
         schedule_threads[i].join();
     }
 
-    // print final statistics (use `printw()` for each print, and `refresh()` after all prints)
+    // print final statistics (use `printw()` for each print)
     //  - CPU utilization
     //  - Throughput
     //     - Average for first 50% of processes finished
@@ -112,6 +112,11 @@ int main(int argc, char *argv[])
     //     - Overall average
     //  - Average turnaround time
     //  - Average waiting time
+
+    // display final stats and wait for user to press any key before exiting program
+    printw("\nPress any key to exit...");
+    refresh();
+    getch();
 
 
     // Clean up before quitting program
